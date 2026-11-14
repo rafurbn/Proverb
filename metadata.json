@@ -1,0 +1,6 @@
+{
+  "name": "Probad Studio",
+  "description": "Automated Bengali proverb short vertical video generator and daily Facebook Reels publisher with AI voiceover and FFmpeg rendering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
