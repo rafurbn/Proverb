@@ -1,7 +1,7 @@
 import fs from 'fs';
-import cron, { ScheduledTask } from 'node-cron';
+import cron, { type ScheduledTask } from 'node-cron';
 import path from 'path';
-import { db, DIRS, getSettings, ProverbRow, updateSettings } from '../db.ts';
+import { db, DIRS, getSettings, type ProverbRow, updateSettings } from '../db.ts';
 import { publishFacebookReel } from './facebook.ts';
 import { generateBengaliVoiceover } from './tts.ts';
 import { renderReelVideo } from './videoEngine.ts';

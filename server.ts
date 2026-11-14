@@ -4,13 +4,12 @@ import express from 'express';
 import fs from 'fs';
 import multer from 'multer';
 import path from 'path';
-import { createServer as createViteServer } from 'vite';
 import * as XLSX from 'xlsx';
-import { db, DIRS, getSettings, MediaAssetRow, ProverbRow, RenderLogRow, updateSettings } from './server/db.ts';
+import { db, DIRS, getSettings, type MediaAssetRow, type ProverbRow, type RenderLogRow, updateSettings } from './server/db.ts';
 import { isAutomationBusy, reloadCronScheduler, runReelPipeline } from './server/services/scheduler.ts';
 import { ensureDefaultMediaAssets, probeDuration } from './server/services/seedMedia.ts';
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 const uploadMemory = multer({
   storage: multer.memoryStorage(),
@@ -510,6 +509,7 @@ async function startServer() {
 
   // --- Vite Dev Middleware / Static Prod Serving ---
   if (process.env.NODE_ENV !== 'production') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',

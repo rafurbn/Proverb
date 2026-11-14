@@ -2,7 +2,7 @@ import { execFile } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
-import { AutomationSettings, db, DIRS, MediaAssetRow, ProverbRow } from '../db.ts';
+import { type AutomationSettings, db, DIRS, type MediaAssetRow, type ProverbRow } from '../db.ts';
 import { ensureDefaultMediaAssets, probeDuration } from './seedMedia.ts';
 
 const execFileAsync = promisify(execFile);
