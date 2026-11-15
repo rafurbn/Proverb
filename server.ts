@@ -9,7 +9,7 @@ import { db, DIRS, getSettings, type MediaAssetRow, type ProverbRow, type Render
 import { isAutomationBusy, reloadCronScheduler, runReelPipeline } from './server/services/scheduler.ts';
 import { ensureDefaultMediaAssets, probeDuration } from './server/services/seedMedia.ts';
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 8080;
 
 const uploadMemory = multer({
   storage: multer.memoryStorage(),
